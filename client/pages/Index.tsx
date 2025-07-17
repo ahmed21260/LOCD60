@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   Car,
   MapPin,
@@ -196,36 +195,16 @@ export default function Index() {
           </div>
         ))}
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="relative z-20 text-center px-4 max-w-4xl mx-auto"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6"
-          >
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6">
             La voiture qu'il vous faut,{" "}
             <span className="text-locd-red">quand il vous la faut</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
-          >
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Location de citadines stylées dans l'Oise. Réservation simple, prix
             transparents.
-          </motion.p>
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          </p>
+          <button
             onClick={() =>
               document
                 .getElementById("vehicles")
@@ -235,8 +214,8 @@ export default function Index() {
           >
             Voir les véhicules
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         {/* Navigation arrows */}
         <button
