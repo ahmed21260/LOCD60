@@ -14,15 +14,20 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Montserrat", "Bebas Neue", "sans-serif"],
-        body: ["Inter", "Open Sans", "sans-serif"],
+        display: ["Space Grotesk", "Plus Jakarta Sans", "sans-serif"],
+        body: ["Plus Jakarta Sans", "Inter", "sans-serif"],
       },
       colors: {
-        // Loc'D 60 Brand Colors
+        // Nouveau thème moderne Loc'D 60
         locd: {
-          black: "#0B0B0B",
-          red: "#D90429",
+          primary: "#1e2849",
+          secondary: "#0ea5e9",
+          accent: "#f59e0b",
           white: "#FFFFFF",
+          gray: {
+            light: "#e2e8f0",
+            DEFAULT: "#374151",
+          },
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
