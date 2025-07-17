@@ -8,6 +8,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Index from "./pages/Index";
+import Vehicles from "./pages/Vehicles";
+import VehicleDetail from "./pages/VehicleDetail";
+import Reservation from "./pages/Reservation";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./components/PlaceholderPage";
 
@@ -22,33 +25,9 @@ const App = () => (
         <Header />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route
-            path="/vehicules"
-            element={
-              <PlaceholderPage
-                title="Nos véhicules"
-                description="Découvrez notre gamme complète de véhicules disponibles à la location."
-              />
-            }
-          />
-          <Route
-            path="/vehicule/:id"
-            element={
-              <PlaceholderPage
-                title="Détail véhicule"
-                description="Fiche détaillée du véhicule avec galerie, spécifications et réservation."
-              />
-            }
-          />
-          <Route
-            path="/reservation"
-            element={
-              <PlaceholderPage
-                title="Réservation"
-                description="Réservez votre véhicule en 3 étapes simples."
-              />
-            }
-          />
+          <Route path="/vehicules" element={<Vehicles />} />
+          <Route path="/vehicule/:id" element={<VehicleDetail />} />
+          <Route path="/reservation" element={<Reservation />} />
           <Route
             path="/tarifs"
             element={
