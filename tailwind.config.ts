@@ -18,15 +18,15 @@ export default {
         body: ["Plus Jakarta Sans", "Inter", "sans-serif"],
       },
       colors: {
-        // Nouveau thème moderne Loc'D 60
+        // Thème rouge/blanc/noir moderne Loc'D 60
         locd: {
-          primary: "#1e2849",
-          secondary: "#0ea5e9",
-          accent: "#f59e0b",
+          black: "#0A0A0A",
+          red: "#D90429",
+          "red-dark": "#B91F3C",
           white: "#FFFFFF",
           gray: {
-            light: "#e2e8f0",
-            DEFAULT: "#374151",
+            light: "#F5F5F5",
+            DEFAULT: "#333333",
           },
         },
         border: "hsl(var(--border))",
