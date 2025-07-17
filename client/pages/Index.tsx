@@ -32,19 +32,16 @@ export default function Index() {
       image: "/api/placeholder/1200/600",
       title: "Clio 5 RS",
       subtitle: "Puissance et style urbain",
-      color: "from-blue-500 to-cyan-500",
     },
     {
       image: "/api/placeholder/1200/600",
       title: "Polo GTI R-Line",
       subtitle: "Performance et élégance",
-      color: "from-purple-500 to-pink-500",
     },
     {
       image: "/api/placeholder/1200/600",
       title: "DS5",
       subtitle: "Confort et prestige",
-      color: "from-amber-500 to-orange-500",
     },
   ];
 
@@ -120,25 +117,21 @@ export default function Index() {
       icon: <MapPin className="w-8 h-8" />,
       title: "Livraison Express",
       description: "Livraison gratuite dans l'Oise en moins de 2h",
-      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Clock className="w-8 h-8" />,
       title: "24h/24 - 7j/7",
       description: "Service client disponible à tout moment",
-      color: "from-purple-500 to-pink-500",
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Assurance Premium",
       description: "Véhicules assurés tous risques inclus",
-      color: "from-emerald-500 to-teal-500",
     },
     {
       icon: <Award className="w-8 h-8" />,
       title: "Flotte 2023",
       description: "Véhicules neufs avec moins de 10,000km",
-      color: "from-amber-500 to-orange-500",
     },
   ];
 
@@ -210,13 +203,13 @@ export default function Index() {
   const getBadgeColor = (badge: string) => {
     switch (badge) {
       case "Populaire":
-        return "bg-gradient-to-r from-blue-500 to-cyan-500";
+        return "bg-gradient-to-r from-red-500 to-red-600";
       case "Sport":
-        return "bg-gradient-to-r from-purple-500 to-pink-500";
+        return "bg-gradient-to-r from-gray-800 to-gray-900";
       case "Premium":
-        return "bg-gradient-to-r from-amber-500 to-orange-500";
+        return "bg-gradient-to-r from-yellow-500 to-yellow-600";
       case "Eco":
-        return "bg-gradient-to-r from-emerald-500 to-teal-500";
+        return "bg-gradient-to-r from-green-500 to-green-600";
       default:
         return "bg-gradient-to-r from-gray-500 to-gray-600";
     }
@@ -225,15 +218,15 @@ export default function Index() {
   return (
     <main className="pt-16">
       {/* Hero Section Moderne */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-red-900">
         {/* Background avec overlay moderne */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-blue-900/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-gray-900/80 to-transparent z-10" />
 
         {/* Effet de particules/mesh gradient */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-40 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-72 h-72 bg-red-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute bottom-20 left-40 w-72 h-72 bg-gray-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
         </div>
 
         {heroSlides.map((slide, index) => (
@@ -253,7 +246,7 @@ export default function Index() {
 
         <div className="relative z-20 text-center px-6 max-w-6xl mx-auto">
           <div className="inline-flex items-center bg-white/10 backdrop-blur-lg rounded-full px-6 py-3 mb-8 border border-white/20">
-            <Sparkles className="w-5 h-5 text-cyan-400 mr-2" />
+            <Sparkles className="w-5 h-5 text-red-400 mr-2" />
             <span className="text-white font-medium">
               N°1 de la location dans l'Oise
             </span>
@@ -261,12 +254,12 @@ export default function Index() {
 
           <h1 className="text-6xl md:text-8xl font-display font-bold text-white mb-8 leading-tight">
             La voiture qu'il vous faut,{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">
               quand il vous la faut
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             Découvrez notre flotte de véhicules premium dans l'Oise. Réservation
             en 2 minutes, livraison gratuite, prix transparents.
           </p>
@@ -285,7 +278,7 @@ export default function Index() {
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            <button className="btn-secondary text-lg inline-flex items-center group">
+            <button className="btn-secondary text-lg inline-flex items-center group bg-white/10 border-white/30 text-white hover:bg-white hover:text-red-600">
               <Phone className="mr-3 w-6 h-6" />
               06 12 34 56 78
             </button>
@@ -295,15 +288,15 @@ export default function Index() {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
               <div className="text-4xl font-bold text-white mb-2">500+</div>
-              <div className="text-slate-300">Clients satisfaits</div>
+              <div className="text-gray-300">Clients satisfaits</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-white mb-2">15</div>
-              <div className="text-slate-300">Véhicules premium</div>
+              <div className="text-gray-300">Véhicules premium</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-white mb-2">4.9/5</div>
-              <div className="text-slate-300">Note moyenne</div>
+              <div className="text-gray-300">Note moyenne</div>
             </div>
           </div>
         </div>
@@ -311,27 +304,25 @@ export default function Index() {
         {/* Navigation arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 glass-effect rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 glass-effect rounded-full flex items-center justify-center text-white hover:bg-red-500/20 transition-all"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 glass-effect rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 glass-effect rounded-full flex items-center justify-center text-white hover:bg-red-500/20 transition-all"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
 
         {/* Slide indicators */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
-          {heroSlides.map((slide, index) => (
+          {heroSlides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-2 rounded-full transition-all ${
-                index === currentSlide
-                  ? `w-8 ${slide.color.replace("from-", "bg-").split(" ")[0]}`
-                  : "w-2 bg-white/50"
+                index === currentSlide ? "w-8 bg-red-500" : "w-2 bg-white/50"
               }`}
             />
           ))}
@@ -339,18 +330,18 @@ export default function Index() {
       </section>
 
       {/* Section Véhicules */}
-      <section id="vehicles" className="py-24 bg-slate-50">
+      <section id="vehicles" className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full px-6 py-2 mb-6">
+            <div className="inline-flex items-center bg-gradient-to-r from-red-500 to-red-600 rounded-full px-6 py-2 mb-6">
               <Car className="w-5 h-5 text-white mr-2" />
               <span className="text-white font-semibold">Notre Flotte</span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
               Véhicules <span className="gradient-text">Premium</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Une sélection rigoureuse de véhicules récents, entretenus par des
               professionnels et équipés des dernières technologies
             </p>
@@ -389,8 +380,8 @@ export default function Index() {
                 onClick={() => setSelectedFilter(filter.key)}
                 className={`flex items-center space-x-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
                   selectedFilter === filter.key
-                    ? "bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-lg"
-                    : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 shadow-sm"
+                    ? "bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg"
+                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-sm"
                 }`}
               >
                 {filter.icon}
@@ -399,7 +390,7 @@ export default function Index() {
                   className={`px-2 py-1 rounded-full text-xs font-bold ${
                     selectedFilter === filter.key
                       ? "bg-white/20"
-                      : "bg-slate-100"
+                      : "bg-gray-100"
                   }`}
                 >
                   {filter.count}
@@ -424,7 +415,7 @@ export default function Index() {
                 </div>
 
                 {/* Favori */}
-                <button className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:text-red-500 transition-colors shadow-lg">
+                <button className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors shadow-lg">
                   <Heart className="w-5 h-5" />
                 </button>
 
@@ -439,45 +430,45 @@ export default function Index() {
 
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-slate-800">
+                    <h3 className="text-xl font-bold text-gray-900">
                       {vehicle.name}
                     </h3>
                     <div className="flex items-center">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="ml-1 text-sm font-semibold text-slate-600">
+                      <span className="ml-1 text-sm font-semibold text-gray-600">
                         {vehicle.rating}
                       </span>
-                      <span className="ml-1 text-xs text-slate-500">
+                      <span className="ml-1 text-xs text-gray-500">
                         ({vehicle.reviews})
                       </span>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 mb-6">
-                    <div className="flex items-center text-sm text-slate-600">
-                      <Zap className="w-4 h-4 mr-2 text-blue-500" />
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Zap className="w-4 h-4 mr-2 text-red-500" />
                       {vehicle.specs.power}
                     </div>
-                    <div className="flex items-center text-sm text-slate-600">
+                    <div className="flex items-center text-sm text-gray-600">
                       <Fuel className="w-4 h-4 mr-2 text-green-500" />
                       {vehicle.specs.consumption}
                     </div>
-                    <div className="flex items-center text-sm text-slate-600 col-span-2">
-                      <Users className="w-4 h-4 mr-2 text-purple-500" />
+                    <div className="flex items-center text-sm text-gray-600 col-span-2">
+                      <Users className="w-4 h-4 mr-2 text-gray-500" />
                       {vehicle.specs.transmission}
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-3xl font-bold text-slate-800">
+                      <span className="text-3xl font-bold text-gray-900">
                         {vehicle.price}
                       </span>
-                      <span className="text-slate-500">{vehicle.period}</span>
+                      <span className="text-gray-500">{vehicle.period}</span>
                     </div>
                     <Link
                       to={`/vehicule/${vehicle.id}`}
-                      className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-sky-600 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg"
+                      className="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-red-600 hover:to-red-700 transition-all transform hover:scale-105 shadow-lg"
                     >
                       Réserver
                     </Link>
@@ -493,15 +484,15 @@ export default function Index() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full px-6 py-2 mb-6">
+            <div className="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-900 rounded-full px-6 py-2 mb-6">
               <Shield className="w-5 h-5 text-white mr-2" />
               <span className="text-white font-semibold">Nos Avantages</span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
               Pourquoi choisir <span className="gradient-text">Loc'D 60</span> ?
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Une expérience de location révolutionnaire avec un service client
               d'exception
             </p>
@@ -511,17 +502,15 @@ export default function Index() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group text-center p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
+                className="group text-center p-8 rounded-3xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-red-200 hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
               >
-                <div
-                  className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                >
+                <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -531,18 +520,18 @@ export default function Index() {
       </section>
 
       {/* Section Témoignages */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 rounded-full px-6 py-2 mb-6">
+            <div className="inline-flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full px-6 py-2 mb-6">
               <Star className="w-5 h-5 text-white mr-2" />
               <span className="text-white font-semibold">Témoignages</span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
               Avis <span className="gradient-text">clients</span>
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-gray-600">
               Des milliers de clients nous font confiance
             </p>
           </div>
@@ -551,7 +540,7 @@ export default function Index() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-white p-8 rounded-3xl border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 <div className="flex items-center mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -562,7 +551,7 @@ export default function Index() {
                   ))}
                 </div>
 
-                <p className="text-slate-700 mb-6 leading-relaxed italic">
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
                   "{testimonial.text}"
                 </p>
 
@@ -570,18 +559,18 @@ export default function Index() {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-14 h-14 rounded-full mr-4 border-2 border-blue-100"
+                    className="w-14 h-14 rounded-full mr-4 border-2 border-red-100"
                   />
                   <div>
                     <div className="flex items-center">
-                      <p className="font-bold text-slate-800">
+                      <p className="font-bold text-gray-900">
                         {testimonial.name}
                       </p>
                       {testimonial.verified && (
-                        <CheckCircle className="w-4 h-4 text-blue-500 ml-2" />
+                        <CheckCircle className="w-4 h-4 text-red-500 ml-2" />
                       )}
                     </div>
-                    <p className="text-sm text-slate-500">
+                    <p className="text-sm text-gray-500">
                       {testimonial.location}
                     </p>
                   </div>
@@ -596,10 +585,10 @@ export default function Index() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
               Questions <span className="gradient-text">fréquentes</span>
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-gray-600">
               Toutes les réponses à vos questions
             </p>
           </div>
@@ -608,12 +597,12 @@ export default function Index() {
             {faqItems.map((item, index) => (
               <details
                 key={index}
-                className="bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all duration-300 overflow-hidden"
+                className="bg-gray-50 rounded-2xl border border-gray-200 hover:border-red-300 transition-all duration-300 overflow-hidden"
               >
-                <summary className="p-8 cursor-pointer text-slate-800 font-semibold text-lg hover:text-blue-600 transition-colors">
+                <summary className="p-8 cursor-pointer text-gray-900 font-semibold text-lg hover:text-red-600 transition-colors">
                   {item.question}
                 </summary>
-                <div className="px-8 pb-8 text-slate-600 leading-relaxed">
+                <div className="px-8 pb-8 text-gray-600 leading-relaxed">
                   {item.answer}
                 </div>
               </details>
@@ -623,16 +612,16 @@ export default function Index() {
       </section>
 
       {/* Section Contact */}
-      <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 text-white">
+      <section className="py-24 bg-gradient-to-br from-black via-gray-900 to-red-900 text-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
               Contactez-
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">
                 nous
               </span>
             </h2>
-            <p className="text-xl text-slate-300">
+            <p className="text-xl text-gray-300">
               Notre équipe est là pour vous accompagner
             </p>
           </div>
@@ -644,34 +633,34 @@ export default function Index() {
               </h3>
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
                     <p className="font-semibold text-lg">06 12 34 56 78</p>
-                    <p className="text-slate-300">
+                    <p className="text-gray-300">
                       Lundi au Samedi • 8h00 - 20h00
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl flex items-center justify-center mr-4">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <p className="font-semibold text-lg">contact@locd60.fr</p>
-                    <p className="text-slate-300">Réponse garantie sous 2h</p>
+                    <p className="text-gray-300">Réponse garantie sous 2h</p>
                   </div>
                 </div>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
                     <p className="font-semibold text-lg">Zone de livraison</p>
-                    <p className="text-slate-300">
+                    <p className="text-gray-300">
                       Tout le département de l'Oise (60)
                     </p>
                   </div>
@@ -679,7 +668,7 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="glass-effect p-8 rounded-3xl">
+            <div className="glass-effect-dark p-8 rounded-3xl">
               <h3 className="text-3xl font-bold mb-8">
                 Envoyez-nous un message
               </h3>
@@ -688,27 +677,27 @@ export default function Index() {
                   <input
                     type="text"
                     placeholder="Prénom"
-                    className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-300 focus:border-cyan-400 focus:outline-none backdrop-blur-sm"
+                    className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:border-red-400 focus:outline-none backdrop-blur-sm"
                   />
                   <input
                     type="text"
                     placeholder="Nom"
-                    className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-300 focus:border-cyan-400 focus:outline-none backdrop-blur-sm"
+                    className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:border-red-400 focus:outline-none backdrop-blur-sm"
                   />
                 </div>
                 <input
                   type="email"
                   placeholder="Votre adresse email"
-                  className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-300 focus:border-cyan-400 focus:outline-none backdrop-blur-sm"
+                  className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:border-red-400 focus:outline-none backdrop-blur-sm"
                 />
                 <textarea
                   placeholder="Votre message..."
                   rows={5}
-                  className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-300 focus:border-cyan-400 focus:outline-none backdrop-blur-sm resize-none"
+                  className="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:border-red-400 focus:outline-none backdrop-blur-sm resize-none"
                 />
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-4 rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg"
+                  className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-4 rounded-xl hover:from-red-600 hover:to-red-700 transition-all transform hover:scale-105 shadow-lg"
                 >
                   Envoyer le message
                 </button>
@@ -729,10 +718,10 @@ export default function Index() {
       </a>
 
       {/* CTA Mobile Sticky */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-sky-500 to-cyan-500 p-4 z-40 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-600 p-4 z-40 md:hidden">
         <Link
           to="/reservation"
-          className="block w-full text-center bg-white text-sky-600 font-bold py-4 rounded-xl shadow-lg"
+          className="block w-full text-center bg-white text-red-600 font-bold py-4 rounded-xl shadow-lg"
         >
           Réserver maintenant
         </Link>
