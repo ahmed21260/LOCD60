@@ -23,7 +23,7 @@ export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedFilter, setSelectedFilter] = useState("all");
 
-  const heroSlides = [
+    const heroSlides = [
     {
       image: "/api/placeholder/1200/600",
       title: "Clio 5 RS",
@@ -45,7 +45,7 @@ export default function Index() {
     {
       id: 1,
       name: "Renault Clio 5 RS",
-      image: "/api/placeholder/400/250",
+            image: "/api/placeholder/400/250",
       specs: {
         power: "200 ch",
         consumption: "6.5L/100km",
@@ -57,7 +57,7 @@ export default function Index() {
     {
       id: 2,
       name: "Renault Clio 5",
-      image: "/api/placeholder/400/250",
+            image: "/api/placeholder/400/250",
       specs: {
         power: "130 ch",
         consumption: "5.2L/100km",
@@ -69,7 +69,7 @@ export default function Index() {
     {
       id: 3,
       name: "Volkswagen Polo GTI R-Line",
-      image: "/api/placeholder/400/250",
+            image: "/api/placeholder/400/250",
       specs: {
         power: "150 ch",
         consumption: "5.8L/100km",
@@ -81,7 +81,7 @@ export default function Index() {
     {
       id: 4,
       name: "Citroën DS5",
-      image: "/api/placeholder/400/250",
+            image: "/api/placeholder/400/250",
       specs: {
         power: "165 ch",
         consumption: "6.0L/100km",
@@ -120,19 +120,19 @@ export default function Index() {
       name: "Marie L.",
       rating: 5,
       text: "Service excellent, voiture impeccable. Je recommande vivement !",
-      avatar: "/api/placeholder/60/60",
+            avatar: "/api/placeholder/60/60",
     },
     {
       name: "Thomas B.",
       rating: 5,
       text: "Réservation simple et rapide. La Clio RS était parfaite pour mon week-end.",
-      avatar: "/api/placeholder/60/60",
+            avatar: "/api/placeholder/60/60",
     },
     {
       name: "Sophie M.",
       rating: 5,
       text: "Équipe très professionnelle, prix abordables. Mon choix de référence !",
-      avatar: "/api/placeholder/60/60",
+            avatar: "/api/placeholder/60/60",
     },
   ];
 
@@ -333,7 +333,7 @@ export default function Index() {
                       {vehicle.specs.transmission}
                     </div>
                   </div>
-                  <Link
+                                    <Link
                     to={`/vehicule/${vehicle.id}`}
                     className="btn-primary w-full text-center group"
                   >
@@ -341,7 +341,7 @@ export default function Index() {
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
