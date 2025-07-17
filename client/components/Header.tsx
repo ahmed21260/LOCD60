@@ -22,12 +22,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
               <Car className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-display font-bold text-slate-800">
+            <span className="text-2xl font-display font-bold text-gray-900">
               Loc'
-              <span className="bg-gradient-to-r from-sky-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
                 D
               </span>{" "}
               60
@@ -40,7 +40,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 to={item.href}
-                className="text-slate-700 hover:text-sky-600 transition-colors duration-300 font-semibold px-4 py-2 rounded-lg hover:bg-sky-50"
+                className="text-gray-700 hover:text-red-600 transition-colors duration-300 font-semibold px-4 py-2 rounded-lg hover:bg-red-50"
               >
                 {item.label}
               </Link>
@@ -51,7 +51,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Link
               to="/reservation"
-              className="hidden sm:inline-flex items-center bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-sky-600 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg"
+              className="hidden sm:inline-flex items-center bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold px-6 py-3 rounded-xl hover:from-red-600 hover:to-red-700 transition-all transform hover:scale-105 shadow-lg"
             >
               Réserver maintenant
             </Link>
@@ -59,7 +59,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 shadow-md"
+              className="md:hidden w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-50 hover:text-red-600 transition-all duration-300 shadow-md"
               aria-label="Menu"
             >
               {isMenuOpen ? (
@@ -80,7 +80,7 @@ export default function Header() {
                   key={item.href}
                   to={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block text-slate-700 hover:text-sky-600 transition-colors duration-300 font-semibold text-lg py-2"
+                  className="block text-gray-700 hover:text-red-600 transition-colors duration-300 font-semibold text-lg py-2"
                 >
                   {item.label}
                 </Link>
@@ -88,7 +88,7 @@ export default function Header() {
               <Link
                 to="/reservation"
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-semibold px-8 py-4 rounded-xl hover:from-sky-600 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg mt-6"
+                className="inline-flex items-center bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold px-8 py-4 rounded-xl hover:from-red-600 hover:to-red-700 transition-all transform hover:scale-105 shadow-lg mt-6"
               >
                 Réserver maintenant
               </Link>
