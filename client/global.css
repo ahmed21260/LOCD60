@@ -6,46 +6,45 @@
 
 @layer base {
   /**
-   * Loc'D 60 - Nouveau design moderne
-   * Thème clair avec accents vibrants
-  */
+   * Loc'D 60 - Design moderne rouge/blanc/noir
+   */
   :root {
-    /* Nouveau thème moderne */
-    --locd-primary: 220 38% 20%; /* #1e2849 - Bleu marine sophistiqué */
-    --locd-secondary: 199 89% 48%; /* #0ea5e9 - Bleu cyan électrique */
-    --locd-accent: 47 96% 53%; /* #f59e0b - Orange/jaune vibrant */
+    /* Thème rouge, blanc, noir moderne */
+    --locd-black: 0 0% 4%; /* #0A0A0A - Noir profond */
+    --locd-red: 351 91% 51%; /* #D90429 - Rouge sport */
+    --locd-red-dark: 351 91% 41%; /* Rouge plus foncé */
     --locd-white: 0 0% 100%; /* #FFFFFF */
-    --locd-gray-light: 220 13% 91%; /* #e2e8f0 */
-    --locd-gray: 215 25% 27%; /* #374151 */
+    --locd-gray-light: 0 0% 96%; /* #F5F5F5 */
+    --locd-gray: 0 0% 20%; /* #333333 */
 
     /* Theme Colors */
     --background: 0 0% 100%;
-    --foreground: 220 38% 20%;
+    --foreground: 0 0% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 38% 20%;
+    --card-foreground: 0 0% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 38% 20%;
+    --popover-foreground: 0 0% 4%;
 
-    --primary: 199 89% 48%;
+    --primary: 351 91% 51%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 13% 91%;
-    --secondary-foreground: 220 38% 20%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 4%;
 
-    --muted: 220 13% 91%;
-    --muted-foreground: 215 25% 27%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 20%;
 
-    --accent: 47 96% 53%;
-    --accent-foreground: 220 38% 20%;
+    --accent: 351 91% 51%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 199 89% 48%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 351 91% 51%;
 
     --radius: 1rem;
   }
@@ -57,8 +56,8 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-800 font-body;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    @apply bg-white text-gray-900 font-body;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   }
 
   h1,
@@ -73,24 +72,28 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-sky-500 to-cyan-500 text-white hover:from-sky-600 hover:to-cyan-600 transition-all duration-300 font-semibold rounded-2xl px-8 py-4 shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 transition-all duration-300 font-semibold rounded-2xl px-8 py-4 shadow-lg hover:shadow-xl transform hover:scale-105;
   }
 
   .btn-secondary {
-    @apply bg-white border-2 border-sky-500 text-sky-600 hover:bg-sky-50 hover:border-sky-600 transition-all duration-300 font-semibold rounded-2xl px-8 py-4 shadow-md hover:shadow-lg;
+    @apply bg-white border-2 border-red-500 text-red-600 hover:bg-red-50 hover:border-red-600 transition-all duration-300 font-semibold rounded-2xl px-8 py-4 shadow-md hover:shadow-lg;
   }
 
   .card-vehicle {
-    @apply bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-sky-300 transition-all duration-500 hover:shadow-2xl hover:shadow-sky-100/50 transform hover:scale-105;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    @apply bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-red-300 transition-all duration-500 hover:shadow-2xl hover:shadow-red-100/50 transform hover:scale-105;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
   }
 
   .glass-effect {
-    @apply backdrop-blur-lg bg-white/80 border border-white/20;
+    @apply backdrop-blur-lg bg-white/90 border border-white/20;
+  }
+
+  .glass-effect-dark {
+    @apply backdrop-blur-lg bg-black/90 border border-white/10;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-sky-600 to-cyan-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent;
   }
 
   .hover\:scale-102:hover {
@@ -144,5 +147,14 @@
 
   .animate-slide-in-right {
     animation: slideInRight 0.8s ease-out;
+  }
+
+  .bg-pattern-dots {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(217, 4, 41, 0.1) 1px,
+      transparent 0
+    );
+    background-size: 20px 20px;
   }
 }
