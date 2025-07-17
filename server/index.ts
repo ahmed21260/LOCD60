@@ -18,5 +18,8 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
+  // Placeholder images
+  app.get("/api/placeholder/:width/:height", handlePlaceholder);
+
   return app;
 }
