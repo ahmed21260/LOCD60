@@ -13,7 +13,17 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["Montserrat", "Bebas Neue", "sans-serif"],
+        body: ["Inter", "Open Sans", "sans-serif"],
+      },
       colors: {
+        // Loc'D 60 Brand Colors
+        locd: {
+          black: "#0B0B0B",
+          red: "#D90429",
+          white: "#FFFFFF",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
