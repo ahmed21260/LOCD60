@@ -195,7 +195,7 @@ export default function Index() {
           </div>
         ))}
 
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6">
             La voiture qu'il vous faut,{" "}
             <span className="text-locd-red">quand il vous la faut</span>
@@ -210,7 +210,7 @@ export default function Index() {
                 .getElementById("vehicles")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="btn-primary text-lg inline-flex items-center group"
+            className="btn-primary text-lg inline-flex items-center group hover:scale-105 transition-transform"
           >
             Voir les véhicules
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -248,29 +248,17 @@ export default function Index() {
       {/* Vehicles Section */}
       <section id="vehicles" className="py-20 bg-gray-950">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Notre <span className="text-locd-red">flotte</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Des véhicules récents, entretenus et prêts pour vos déplacements
             </p>
-          </motion.div>
+          </div>
 
           {/* Filters */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
-          >
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             {[
               {
                 key: "all",
@@ -293,12 +281,10 @@ export default function Index() {
                 icon: <Star className="w-4 h-4" />,
               },
             ].map((filter) => (
-              <motion.button
+              <button
                 key={filter.key}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedFilter(filter.key)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all ${
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 ${
                   selectedFilter === filter.key
                     ? "bg-locd-red text-white"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
@@ -306,21 +292,17 @@ export default function Index() {
               >
                 {filter.icon}
                 <span>{filter.label}</span>
-              </motion.button>
+              </button>
             ))}
-          </motion.div>
+          </div>
 
           {/* Vehicle Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredVehicles.map((vehicle, index) => (
-              <motion.div
+              <div
                 key={vehicle.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="card-vehicle group cursor-pointer"
+                className="card-vehicle group cursor-pointer hover:scale-102 transition-transform"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -360,7 +342,7 @@ export default function Index() {
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -369,31 +351,20 @@ export default function Index() {
       {/* Services Section */}
       <section className="py-20 bg-locd-black">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Pourquoi <span className="text-locd-red">Loc'D 60</span> ?
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Une expérience de location simple, fiable et transparente
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="text-center p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-locd-red transition-all duration-300 hover:shadow-lg hover:shadow-locd-red/20"
+                className="text-center p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-locd-red transition-all duration-300 hover:shadow-lg hover:shadow-locd-red/20 hover:scale-105"
               >
                 <div className="w-16 h-16 bg-locd-red/20 rounded-full flex items-center justify-center mx-auto mb-4 text-locd-red">
                   {service.icon}
@@ -402,7 +373,7 @@ export default function Index() {
                   {service.title}
                 </h3>
                 <p className="text-gray-400">{service.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -411,29 +382,18 @@ export default function Index() {
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-950">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Avis <span className="text-locd-red">clients</span>
             </h2>
             <p className="text-xl text-gray-400">Ce que pensent nos clients</p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-gray-900 p-6 rounded-xl border border-gray-800"
+                className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:scale-102 transition-transform"
               >
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -457,7 +417,7 @@ export default function Index() {
                     <p className="text-sm text-gray-400">Client vérifié</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -466,33 +426,23 @@ export default function Index() {
       {/* FAQ Section */}
       <section className="py-20 bg-locd-black">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Questions <span className="text-locd-red">fréquentes</span>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="max-w-3xl mx-auto space-y-4">
             {faqItems.map((item, index) => (
-              <motion.details
+              <details
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="bg-gray-900 rounded-xl border border-gray-800 hover:border-locd-red transition-colors"
               >
                 <summary className="p-6 cursor-pointer text-white font-semibold hover:text-locd-red transition-colors">
                   {item.question}
                 </summary>
                 <div className="px-6 pb-6 text-gray-400">{item.answer}</div>
-              </motion.details>
+              </details>
             ))}
           </div>
         </div>
@@ -501,28 +451,17 @@ export default function Index() {
       {/* Contact Section */}
       <section className="py-20 bg-gray-950">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Nous <span className="text-locd-red">contacter</span>
             </h2>
             <p className="text-xl text-gray-400">
               Une question ? Nous sommes là pour vous aider
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h3 className="text-2xl font-bold text-white mb-6">
                 Informations de contact
               </h3>
@@ -555,14 +494,9 @@ export default function Index() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h3 className="text-2xl font-bold text-white mb-6">
                 Envoyez-nous un message
               </h3>
@@ -582,49 +516,37 @@ export default function Index() {
                   rows={4}
                   className="w-full p-4 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-400 focus:border-locd-red focus:outline-none resize-none"
                 />
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                <button
                   type="submit"
-                  className="btn-primary w-full"
+                  className="btn-primary w-full hover:scale-102 transition-transform"
                 >
                   Envoyer le message
-                </motion.button>
+                </button>
               </form>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* WhatsApp Float Button */}
-      <motion.a
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 2, type: "spring" }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+      <a
         href="https://wa.me/33612345678"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors z-50"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 hover:scale-110 transition-all z-50"
       >
         <MessageCircle className="w-6 h-6" />
-      </motion.a>
+      </a>
 
       {/* Sticky CTA Mobile */}
-      <motion.div
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 1.5 }}
-        className="fixed bottom-0 left-0 right-0 bg-locd-red p-4 z-40 md:hidden"
-      >
+      <div className="fixed bottom-0 left-0 right-0 bg-locd-red p-4 z-40 md:hidden">
         <Link
           to="/reservation"
           className="block w-full text-center bg-white text-locd-red font-bold py-3 rounded-lg"
         >
           Réserver maintenant
         </Link>
-      </motion.div>
+      </div>
     </main>
   );
 }
