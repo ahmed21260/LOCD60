@@ -11,6 +11,7 @@ import Index from "./pages/Index";
 import Vehicles from "./pages/Vehicles";
 import VehicleDetail from "./pages/VehicleDetail";
 import Reservation from "./pages/Reservation";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./components/PlaceholderPage";
 
@@ -28,15 +29,7 @@ const App = () => (
           <Route path="/vehicules" element={<Vehicles />} />
           <Route path="/vehicule/:id" element={<VehicleDetail />} />
           <Route path="/reservation" element={<Reservation />} />
-          <Route
-            path="/tarifs"
-            element={
-              <PlaceholderPage
-                title="Nos tarifs"
-                description="Découvrez nos tarifs transparents et nos offres spéciales."
-              />
-            }
-          />
+          <Route path="/tarifs" element={<Pricing />} />
           <Route
             path="/services"
             element={
