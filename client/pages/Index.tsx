@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Car,
   MapPin,
@@ -23,7 +24,7 @@ export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedFilter, setSelectedFilter] = useState("all");
 
-    const heroSlides = [
+  const heroSlides = [
     {
       image: "/api/placeholder/1200/600",
       title: "Clio 5 RS",
@@ -45,7 +46,7 @@ export default function Index() {
     {
       id: 1,
       name: "Renault Clio 5 RS",
-            image: "/api/placeholder/400/250",
+      image: "/api/placeholder/400/250",
       specs: {
         power: "200 ch",
         consumption: "6.5L/100km",
@@ -57,7 +58,7 @@ export default function Index() {
     {
       id: 2,
       name: "Renault Clio 5",
-            image: "/api/placeholder/400/250",
+      image: "/api/placeholder/400/250",
       specs: {
         power: "130 ch",
         consumption: "5.2L/100km",
@@ -69,7 +70,7 @@ export default function Index() {
     {
       id: 3,
       name: "Volkswagen Polo GTI R-Line",
-            image: "/api/placeholder/400/250",
+      image: "/api/placeholder/400/250",
       specs: {
         power: "150 ch",
         consumption: "5.8L/100km",
@@ -81,7 +82,7 @@ export default function Index() {
     {
       id: 4,
       name: "Citroën DS5",
-            image: "/api/placeholder/400/250",
+      image: "/api/placeholder/400/250",
       specs: {
         power: "165 ch",
         consumption: "6.0L/100km",
@@ -120,19 +121,19 @@ export default function Index() {
       name: "Marie L.",
       rating: 5,
       text: "Service excellent, voiture impeccable. Je recommande vivement !",
-            avatar: "/api/placeholder/60/60",
+      avatar: "/api/placeholder/60/60",
     },
     {
       name: "Thomas B.",
       rating: 5,
       text: "Réservation simple et rapide. La Clio RS était parfaite pour mon week-end.",
-            avatar: "/api/placeholder/60/60",
+      avatar: "/api/placeholder/60/60",
     },
     {
       name: "Sophie M.",
       rating: 5,
       text: "Équipe très professionnelle, prix abordables. Mon choix de référence !",
-            avatar: "/api/placeholder/60/60",
+      avatar: "/api/placeholder/60/60",
     },
   ];
 
@@ -195,16 +196,36 @@ export default function Index() {
           </div>
         ))}
 
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative z-20 text-center px-4 max-w-4xl mx-auto"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-5xl md:text-7xl font-display font-extrabold text-white mb-6"
+          >
             La voiture qu'il vous faut,{" "}
             <span className="text-locd-red">quand il vous la faut</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
+          >
             Location de citadines stylées dans l'Oise. Réservation simple, prix
             transparents.
-          </p>
-          <button
+          </motion.p>
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() =>
               document
                 .getElementById("vehicles")
@@ -214,8 +235,8 @@ export default function Index() {
           >
             Voir les véhicules
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {/* Navigation arrows */}
         <button
@@ -248,17 +269,29 @@ export default function Index() {
       {/* Vehicles Section */}
       <section id="vehicles" className="py-20 bg-gray-950">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Notre <span className="text-locd-red">flotte</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Des véhicules récents, entretenus et prêts pour vos déplacements
             </p>
-          </div>
+          </motion.div>
 
           {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-4 mb-12"
+          >
             {[
               {
                 key: "all",
@@ -281,8 +314,10 @@ export default function Index() {
                 icon: <Star className="w-4 h-4" />,
               },
             ].map((filter) => (
-              <button
+              <motion.button
                 key={filter.key}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedFilter(filter.key)}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all ${
                   selectedFilter === filter.key
@@ -292,15 +327,20 @@ export default function Index() {
               >
                 {filter.icon}
                 <span>{filter.label}</span>
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
 
           {/* Vehicle Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredVehicles.map((vehicle) => (
-              <div
+            {filteredVehicles.map((vehicle, index) => (
+              <motion.div
                 key={vehicle.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
                 className="card-vehicle group cursor-pointer"
               >
                 <div className="relative overflow-hidden">
@@ -333,7 +373,7 @@ export default function Index() {
                       {vehicle.specs.transmission}
                     </div>
                   </div>
-                                    <Link
+                  <Link
                     to={`/vehicule/${vehicle.id}`}
                     className="btn-primary w-full text-center group"
                   >
@@ -350,19 +390,30 @@ export default function Index() {
       {/* Services Section */}
       <section className="py-20 bg-locd-black">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Pourquoi <span className="text-locd-red">Loc'D 60</span> ?
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Une expérience de location simple, fiable et transparente
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
                 className="text-center p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-locd-red transition-all duration-300 hover:shadow-lg hover:shadow-locd-red/20"
               >
                 <div className="w-16 h-16 bg-locd-red/20 rounded-full flex items-center justify-center mx-auto mb-4 text-locd-red">
@@ -372,7 +423,7 @@ export default function Index() {
                   {service.title}
                 </h3>
                 <p className="text-gray-400">{service.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -381,17 +432,28 @@ export default function Index() {
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-950">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Avis <span className="text-locd-red">clients</span>
             </h2>
             <p className="text-xl text-gray-400">Ce que pensent nos clients</p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
                 className="bg-gray-900 p-6 rounded-xl border border-gray-800"
               >
                 <div className="flex items-center mb-4">
@@ -416,7 +478,7 @@ export default function Index() {
                     <p className="text-sm text-gray-400">Client vérifié</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -425,23 +487,33 @@ export default function Index() {
       {/* FAQ Section */}
       <section className="py-20 bg-locd-black">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Questions <span className="text-locd-red">fréquentes</span>
             </h2>
-          </div>
+          </motion.div>
 
           <div className="max-w-3xl mx-auto space-y-4">
             {faqItems.map((item, index) => (
-              <details
+              <motion.details
                 key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="bg-gray-900 rounded-xl border border-gray-800 hover:border-locd-red transition-colors"
               >
                 <summary className="p-6 cursor-pointer text-white font-semibold hover:text-locd-red transition-colors">
                   {item.question}
                 </summary>
                 <div className="px-6 pb-6 text-gray-400">{item.answer}</div>
-              </details>
+              </motion.details>
             ))}
           </div>
         </div>
@@ -450,17 +522,28 @@ export default function Index() {
       {/* Contact Section */}
       <section className="py-20 bg-gray-950">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
               Nous <span className="text-locd-red">contacter</span>
             </h2>
             <p className="text-xl text-gray-400">
               Une question ? Nous sommes là pour vous aider
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-2xl font-bold text-white mb-6">
                 Informations de contact
               </h3>
@@ -493,9 +576,14 @@ export default function Index() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-2xl font-bold text-white mb-6">
                 Envoyez-nous un message
               </h3>
@@ -515,34 +603,49 @@ export default function Index() {
                   rows={4}
                   className="w-full p-4 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-400 focus:border-locd-red focus:outline-none resize-none"
                 />
-                <button type="submit" className="btn-primary w-full">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="btn-primary w-full"
+                >
                   Envoyer le message
-                </button>
+                </motion.button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* WhatsApp Float Button */}
-      <a
+      <motion.a
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 2, type: "spring" }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         href="https://wa.me/33612345678"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors z-50"
       >
         <MessageCircle className="w-6 h-6" />
-      </a>
+      </motion.a>
 
       {/* Sticky CTA Mobile */}
-      <div className="fixed bottom-0 left-0 right-0 bg-locd-red p-4 z-40 md:hidden">
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 1.5 }}
+        className="fixed bottom-0 left-0 right-0 bg-locd-red p-4 z-40 md:hidden"
+      >
         <Link
           to="/reservation"
           className="block w-full text-center bg-white text-locd-red font-bold py-3 rounded-lg"
         >
           Réserver maintenant
         </Link>
-      </div>
+      </motion.div>
     </main>
   );
 }
