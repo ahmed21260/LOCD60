@@ -12,6 +12,9 @@ import Vehicles from "./pages/Vehicles";
 import VehicleDetail from "./pages/VehicleDetail";
 import Reservation from "./pages/Reservation";
 import Pricing from "./pages/Pricing";
+import Services from "./pages/Services";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./components/PlaceholderPage";
 
@@ -30,33 +33,9 @@ const App = () => (
           <Route path="/vehicule/:id" element={<VehicleDetail />} />
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/tarifs" element={<Pricing />} />
-          <Route
-            path="/services"
-            element={
-              <PlaceholderPage
-                title="Nos services"
-                description="Services de livraison, forfaits et options disponibles."
-              />
-            }
-          />
-          <Route
-            path="/a-propos"
-            element={
-              <PlaceholderPage
-                title="À propos de Loc'D 60"
-                description="Découvrez notre histoire et nos valeurs."
-              />
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <PlaceholderPage
-                title="Contact"
-                description="Contactez-nous pour toute question ou demande d'information."
-              />
-            }
-          />
+          <Route path="/services" element={<Services />} />
+          <Route path="/a-propos" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
